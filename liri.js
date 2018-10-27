@@ -99,7 +99,7 @@ function spotifyThisSong(songName) {
                     "Song: " + songInfo[i].name + "\r\n" +
                     "Album the song is from: " + songInfo[i].album.name + "\r\n" +
                     "Preview URL: " + songInfo[i].preview_url + "\r\n" +
-                    "--------------------------------" + i + "--------------------------------" + "\r\n";
+                    "--------------------------------( " + i + " )--------------------------------" + "\r\n";
                     console.log(spotifyResults);
                     log(spotifyResults);
                 }
@@ -115,12 +115,25 @@ function doWhatItSays() {
     fs.readFile("random.txt", "utf8", function(error, data) {
         if (!error) {
             doWhatItSaysResults = data.split(",");
-            spotifyThisSong(doWhatItSaysResults[0], doWhatItSaysResults[1]);
+            console.log(doWhatItSaysResults);
+            var command = doWhatItSaysResults[0];
+            var parameter = doWhatItSaysResults[1];
+
+            // parameter = parameter.replace('"', '');
+            console.log(parameter);
+            switch (command) {
+                case "spotify-this-song":
+                spotifyThisSong(parameter);
+                break;
+            }
+
+            // spotifyThisSong(parameter);
         } else {
             console.log("Error occured: " + error);
         }
     });
 };
+
 
 function log(logResults) {
     fs.appendFile("log.txt", logResults, function (error) {
