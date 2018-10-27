@@ -7,4 +7,4 @@ LIRI takes in the following commands:
 4) do-what-it-says 'any name'
 Note: If the movie or song name is more than one word, kindly put in quotation marks.
 
-
+This project uses Javascript focusing on the use of Node.

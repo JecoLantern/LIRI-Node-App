@@ -6,6 +6,7 @@ var request = require("request");
 var Twitter = require("twitter");
 var Spotify = require ("node-spotify-api");
 var liriArgument = process.argv[2];
+var userINPUT = process.argv[3];
 
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
@@ -21,11 +22,11 @@ switch(liriArgument) {
     break;
     default: console.log(
         "\r\n" + "Please type on of the following commands after 'node liri.js' : " + "\r\n" +
-        "1) my-tweets 'any twitter name' " + "\r\n" +
-        "2) spotify-this-song 'any song name' " + "\r\n" +
-        "3) movie-this 'any movie name' " + "\r\n" +
-        "4) do-what-it-says 'any any' " + "\r\n" +
-        "Kindly put the movie or song name in quotation marks if it's more than one word."
+        "=> 1) my-tweets 'any twitter name' " + "\r\n" +
+        "=> 2) spotify-this-song 'any song name' " + "\r\n" +
+        "=> 3) movie-this 'any movie name' " + "\r\n" +
+        "=> 4) do-what-it-says 'any any' " + "\r\n" +
+        "Kindly put the movie or song name in quotation marks if it's more than one word." + "\r\n" + "For Twitter name, '@' is not needed to retrieve tweets." + "\r\n"
     );
 };
 
@@ -40,17 +41,17 @@ function movieThis() {
             var movieObject = JSON.parse(body);
             // console.log(movieObject);
             var movieResults = 
-            "------------------------------ commencer ici ------------------------------" + "\r\n" + 
-            "Title: " + movieObject.Title + "\r\n" + 
-            "Year: " + movieObject.Year + "\r\n" + 
-            "Imdb Rating: " + movieObject.imdbRating + "\r\n" +
-            "Country: " + movieObject.Country + "\r\n" +
-            "Language: " + movieObject.Language + "\r\n" +
-            "Plot: " + movieObject.Plot + "\r\n" +
-            "Actors: " + movieObject.Actors + "\r\n" +
-            "Rotten Tomatoes Rating: " + movieObject.Ratings[1].Value + "\r\n" +
-            "Rotten Tomatoes URL: " + movieObject.tomatoURL + "\r\n" + 
-            "------------------------------ se termine ici -----------------------------" + "\r\n";
+            "========================================>> commencer ici  <<================================================" + "\r\n" + 
+            "= Title: " + movieObject.Title + "\r\n" + 
+            "= Year: " + movieObject.Year + "\r\n" + 
+            "= Imdb Rating: " + movieObject.imdbRating + "\r\n" +
+            "= Country: " + movieObject.Country + "\r\n" +
+            "= Language: " + movieObject.Language + "\r\n" +
+            "= Plot: " + movieObject.Plot + "\r\n" +
+            "= Actors: " + movieObject.Actors + "\r\n" +
+            "= Rotten Tomatoes Rating: " + movieObject.Ratings[1].Value + "\r\n" +
+            "= Rotten Tomatoes URL: " + movieObject.tomatoURL + "\r\n" + 
+            "========================================>> se termine ici <<================================================" + "\r\n";
             console.log(movieResults);
             log(movieResults);
         } else {
@@ -72,7 +73,7 @@ function myTweets() {
                 console.log(
                     `\t'${t.created_at}'
                     '${t.user.name}':
-                    ${t.text}`
+                    ${t.text}` + "\r\n\n"+ "*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*-.-*"+"\r\n"
                 );
             });
 
@@ -84,7 +85,7 @@ function myTweets() {
 }
 
 function spotifyThisSong(songName) {
-    var songName = process.argv[3];
+    var songName = userINPUT;
     if (!songName) {
         songName = "Whenever Wherever"
     }
@@ -95,11 +96,11 @@ function spotifyThisSong(songName) {
             for (var i=0; i< 5; i++) {
                 if (songInfo[i] != undefined) {
                     var spotifyResults = 
-                    "Artist: " + songInfo[i].artists[0].name + "\r\n" +
-                    "Song: " + songInfo[i].name + "\r\n" +
-                    "Album the song is from: " + songInfo[i].album.name + "\r\n" +
-                    "Preview URL: " + songInfo[i].preview_url + "\r\n" +
-                    "--------------------------------( " + i + " )--------------------------------" + "\r\n";
+                    "= Artist: " + songInfo[i].artists[0].name + "\r\n" +
+                    "= Song: " + songInfo[i].name + "\r\n" +
+                    "= Album the song is from: " + songInfo[i].album.name + "\r\n" +
+                    "= Preview URL: " + songInfo[i].preview_url + "\r\n\n" +
+                    "========================================>>     ( " + i + " )     <<================================================" + "\r\n";
                     console.log(spotifyResults);
                     log(spotifyResults);
                 }
@@ -115,19 +116,17 @@ function doWhatItSays() {
     fs.readFile("random.txt", "utf8", function(error, data) {
         if (!error) {
             doWhatItSaysResults = data.split(",");
-            console.log(doWhatItSaysResults);
+            // console.log(doWhatItSaysResults);
             var command = doWhatItSaysResults[0];
             var parameter = doWhatItSaysResults[1];
-
-            // parameter = parameter.replace('"', '');
-            console.log(parameter);
+            // console.log(command);
+            // console.log(parameter);
             switch (command) {
                 case "spotify-this-song":
-                spotifyThisSong(parameter);
+                userINPUT = parameter;
+                spotifyThisSong();
                 break;
             }
-
-            // spotifyThisSong(parameter);
         } else {
             console.log("Error occured: " + error);
         }
