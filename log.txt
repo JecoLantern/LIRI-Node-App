@@ -1844,3 +1844,81 @@ Preview URL: null
 = Rotten Tomatoes Rating: 	90%
 = Rotten Tomatoes URL: 	http://www.rottentomatoes.com/m/frozen_2013/
 ========================================>> se termine ici <<================================================
+= Artist: Enrique Iglesias
+= Song: Bailando - Spanish Version
+= Album the song is from: SEX AND LOVE (Deluxe)
+= Preview URL: null
+
+========================================>>     ( 1 )     <<================================================
+= Artist: Ozuna
+= Song: Síguelo Bailando
+= Album the song is from: Odisea
+= Preview URL: https://p.scdn.co/mp3-preview/2920028c8d64a9cc91db74dab8e19f96cdb9f321?cid=0eec54b3b0b44987b764d190f3cabc96
+
+========================================>>     ( 0 )     <<================================================
+= Artist: Gianluca Vacchi
+= Song: Sigamos Bailando
+= Album the song is from: Sigamos Bailando
+= Preview URL: null
+
+========================================>>     ( 2 )     <<================================================
+= Artist: Enrique Iglesias
+= Song: Bailando - English Version
+= Album the song is from: SEX AND LOVE
+= Preview URL: null
+
+========================================>>     ( 3 )     <<================================================
+= Artist: Juan Magán
+= Song: Bailando por el Mundo
+= Album the song is from: Bailando por el Mundo
+= Preview URL: https://p.scdn.co/mp3-preview/e99515fccdee49e8f049f8cef9b4f351a69900a7?cid=0eec54b3b0b44987b764d190f3cabc96
+
+========================================>>     ( 4 )     <<================================================
+========================================>> commencer ici  <<================================================
+= Title: 	Frozen
+= Year: 	2013
+= Imdb Rating: 	7.5
+= Country: 	USA
+= Language: 	English, Norwegian
+= Plot: 
+	******************************************************
+	* When the newly-crowned Queen Elsa accidentally     *
+	* uses her power to turn things into ice to curse    *
+	* her home in infinite winter, her sister Anna teams *
+	* up with a mountain man, his playful reindeer, and  *
+	* a snowman to change the weather condition.         *
+	******************************************************	
+= Actors: 	Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
+= Rotten Tomatoes Rating: 	90%
+= Rotten Tomatoes URL: 	http://www.rottentomatoes.com/m/frozen_2013/
+========================================>> se termine ici <<================================================
+= Artist: Tyler and Mark
+= Song: I Want It That Way
+= Album the song is from: Beautiful Dreams
+= Preview URL: https://p.scdn.co/mp3-preview/99c791194bbd4e5f315ca8964babf0b69bc520b3?cid=0eec54b3b0b44987b764d190f3cabc96
+
+========================================>>     ( 3 )     <<================================================
+= Artist: Backstreet Boys
+= Song: I Want It That Way
+= Album the song is from: Millennium
+= Preview URL: https://p.scdn.co/mp3-preview/b8c2410a5acb68b462be6ac85f1312430e2b149c?cid=0eec54b3b0b44987b764d190f3cabc96
+
+========================================>>     ( 1 )     <<================================================
+= Artist: Backstreet Boys
+= Song: I Want It That Way
+= Album the song is from: The Hits--Chapter One
+= Preview URL: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=0eec54b3b0b44987b764d190f3cabc96
+
+========================================>>     ( 0 )     <<================================================
+= Artist: Anthem Lights
+= Song: I Want It That Way
+= Album the song is from: Covers Part IV
+= Preview URL: https://p.scdn.co/mp3-preview/4a163fbfa2dbbe4433f277e0e7395dca656364f5?cid=0eec54b3b0b44987b764d190f3cabc96
+
+========================================>>     ( 2 )     <<================================================
+= Artist: Dynamite Boy
+= Song: I Want It That Way
+= Album the song is from: Punk Goes Pop
+= Preview URL: null
+
+========================================>>     ( 4 )     <<================================================
