@@ -7,6 +7,9 @@ var Twitter = require("twitter");
 var Spotify = require ("node-spotify-api");
 var liriArgument = process.argv[2];
 var userINPUT = process.argv[3];
+var repeat = require('repeat-string');
+var longest = require('longest');
+var wrap = require('word-wrap')
 
 var spotify = new Spotify(keys.spotify);
 var client = new Twitter(keys.twitter);
@@ -40,17 +43,30 @@ function movieThis() {
         if (!error && response.statusCode == 200) {
             var movieObject = JSON.parse(body);
             // console.log(movieObject);
+            var str = movieObject.Plot;
+            var text = wrap(str, {width: 50, indent: ' '});
+            var lines = text.split('\n');
+            var max = longest(lines).length;
+
+            lines = lines.map(function(line) {
+                var diff = max - line.length;
+                return '*' + line + repeat(' ', diff) + '*';
+            });
+            var stars = repeat('*', lines[0].length);
+            var respondez = stars + '\n' +
+                        '\t' + lines.join('\n\t') + '\n' +
+                        '\t' + stars +'\t';
             var movieResults = 
             "========================================>> commencer ici  <<================================================" + "\r\n" + 
-            "= Title: " + movieObject.Title + "\r\n" + 
-            "= Year: " + movieObject.Year + "\r\n" + 
-            "= Imdb Rating: " + movieObject.imdbRating + "\r\n" +
-            "= Country: " + movieObject.Country + "\r\n" +
-            "= Language: " + movieObject.Language + "\r\n" +
-            "= Plot: " + movieObject.Plot + "\r\n" +
-            "= Actors: " + movieObject.Actors + "\r\n" +
-            "= Rotten Tomatoes Rating: " + movieObject.Ratings[1].Value + "\r\n" +
-            "= Rotten Tomatoes URL: " + movieObject.tomatoURL + "\r\n" + 
+            "= Title: \t" + movieObject.Title + "\r\n" + 
+            "= Year: \t" + movieObject.Year + "\r\n" + 
+            "= Imdb Rating: \t" + movieObject.imdbRating + "\r\n" +
+            "= Country: \t" + movieObject.Country + "\r\n" +
+            "= Language: \t" + movieObject.Language + "\r\n" +
+            "= Plot: \n\t" + respondez + "\r\n" +
+            "= Actors: \t" + movieObject.Actors + "\r\n" +
+            "= Rotten Tomatoes Rating: \t" + movieObject.Ratings[1].Value + "\r\n" +
+            "= Rotten Tomatoes URL: \t" + movieObject.tomatoURL + "\r\n" + 
             "========================================>> se termine ici <<================================================" + "\r\n";
             console.log(movieResults);
             log(movieResults);

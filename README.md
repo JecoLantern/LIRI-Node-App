@@ -8,3 +8,15 @@ LIRI takes in the following commands:
 Note: If the movie or song name is more than one word, kindly put in quotation marks.
 
 This project uses Javascript focusing on the use of Node.
+
+Required to run LIRI:
+-Own Keys
+-FS
+-Request
+-Twitter
+-Node-Spotify-API
+
+For Texts:
+-Repeat-String
+-Longest
+-Word-Wrap

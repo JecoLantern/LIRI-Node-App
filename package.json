@@ -18,10 +18,13 @@
   "homepage": "https://github.com/JecoLantern/LIRI-Node-App#readme",
   "dependencies": {
     "dotenv": "^6.1.0",
+    "longest": "^2.0.1",
     "moment": "^2.22.2",
     "node-spotify-api": "^1.0.7",
+    "repeat-string": "^1.6.1",
     "request": "^2.88.0",
-    "twitter": "^1.7.1"
+    "twitter": "^1.7.1",
+    "word-wrap": "^1.2.3"
   },
   "devDependencies": {},
   "description": ""
